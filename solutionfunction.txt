@@ -1,0 +1,152 @@
+CREATE TABLE Doctor (
+DOC_ID varchar2(5) primary key, 
+DEPARTMENT varchar2(50))
+
+drop table doctor
+
+CREATE TABLE Patient (
+P_ID varchar2(5), 
+P_NAME varchar2(50), 
+P_AGE number(2), 
+P_SEX varchar2(1), 
+P_ADDRESS varchar2(50), 
+P_CITY varchar2(20), 
+P_CONTACT number(10),
+P_CHECKUP_DATE date, 
+P_DIAGNOSIS varchar2(50), 
+P_REFDOC varchar2(5), 
+DEPARTMENT varchar2(50));
+
+CREATE TABLE DOC_ON_CALL (
+DOC_ID varchar2(50),
+DOC_NAME varchar2(50), 
+QUALIFICATION varchar2(20), 
+FEE_PER_CALL number(5), 
+ADDRESS varchar2(50),
+CONTACT_NO number(5))
+
+
+INSERT ALL
+into Doctor values ('DR01','Anaesthesia')
+into Doctor values ('DR02','Anaesthesia')
+into Doctor values ('DC01','Anaesthesia')
+into Doctor values ('DC02','Anaesthesia')
+into Doctor values ('DR03','Cardiac')
+into Doctor values ('DR04','Cardiac')
+into Doctor values ('DC03','Cardiac')
+into Doctor values ('DC04','Cardiac')
+into Doctor values ('DR05','Diagnostics')
+into Doctor values ('DR06','Diagnostics')
+into Doctor values ('DC05','Diagnostics')
+into Doctor values ('DC06','Diagnostics')
+into Doctor values ('DR07','ENT')
+into Doctor values ('DR08','ENT')
+into Doctor values ('DC07','ENT')
+into Doctor values ('DC08','ENT')
+into Doctor values ('DR09','General Surgery')
+into Doctor values ('DR10','General Surgery')
+into Doctor values ('DC09','General Surgery')
+into Doctor values ('DC10','General Surgery')
+into Doctor values ('DR11','Neuro Sciences')
+into Doctor values ('DR12','Neuro Sciences')
+into Doctor values ('DC11','Neuro Sciences')
+into Doctor values ('DC12','Neuro Sciences')
+into Doctor values ('DR13','Physiotherapy')
+into Doctor values ('DR14','Physiotherapy')
+into Doctor values ('DC13','Physiotherapy')
+into Doctor values ('DC14','Physiotherapy')
+into Doctor values ('DR15','Psychiatry')
+into Doctor values ('DR16','Psychiatry')
+into Doctor values ('DC15','Psychiatry')
+into Doctor values ('DC16','Psychiatry')
+into Doctor values ('DR17','Orthopaedic')
+into Doctor values ('DR18','Orthopaedic')
+into Doctor values ('DC17','Orthopaedic')
+into Doctor values ('DC18','Orthopaedic')
+into Doctor values ('DR19','Pulmonary')
+into Doctor values ('DR20','Pulmonary')
+into Doctor values ('DC19','Pulmonary')
+into Doctor values ('DC20','Pulmonary')
+SELECT * from DUAL
+
+select * from doctor
+
+INSERT ALL
+into Patient values ('PT001','AAA',35,'M','Civil Lines','Kanpur',9080706051,'01-03-2016','Cardiac Problem','DR03','Cardiac')
+into Patient values ('PT002','AAB',40,'F','Kalyanpur','Kanpur',9080706052,'02-02-2016','Physio Problem','DR13','Physiotherapy')
+into Patient values ('PT003','AAC',45,'M','Parade','Kanpur',9080706053,'01-02-2016','ENT Problem','DC13','ENT')
+into Patient values ('PT004','AAD',50,'F','Rawatpur','Kanpur',9080706054,'02-03-2016','Diagnostics Problem','DR05','Diagnostics')
+into Patient values ('PT005','AAE',55,'M','Harjinder Nagar','Kanpur',9080706055,'03-02-2016','Neuro Problem','DR11','Neuro Sciences')
+into Patient values ('PT006','BAA',35,'M','Civil Lines','Lucknow',9080706061,'01-01-2016','Ortho Problem','DC17','Orthopaedic')
+into Patient values ('PT007','BAB',40,'F','Charbagh','Lucknow',9080706062,'02-02-2016','Surgery','DC09','General Surgery')
+into Patient values ('PT008','BAC',45,'M','Alambagh','Lucknow',9080706063,'01-03-2016','ENT Problem','DC13','ENT')
+into Patient values ('PT009','BAD',50,'F','Gomti Nagar','Lucknow',9080706064,'02-01-2016','Surgery','DR09','General Surgery')
+into Patient values ('PT010','BAE',55,'M','Hazrat Ganj','Lucknow',9080706065,'03-02-2016','Neuro Problem','DR11','Neuro Sciences')
+into Patient values ('PT011','CAA',35,'M','Civil Lines','New Delhi',9080706071,'01-04-2016','Ortho Problem','DC17','Orthopaedic')
+into Patient values ('PT012','CAB',40,'F','Charbagh','New Delhi',9080706072,'02-02-2016','Surgery','DC09','General Surgery')
+into Patient values ('PT013','CAC',45,'M','Alambagh','New Delhi',9080706073,'01-01-2016','ENT Problem','DC13','ENT')
+into Patient values ('PT014','DAD',50,'F','Gomti Nagar','New Delhi',9080706074,'02-03-2016','Surgery','DR09','General Surgery')
+into Patient values ('PT015','DAE',55,'M','Hazrat Ganj','New Delhi',9080706075,'03-02-2016','Neuro Problem','DR11','Neuro Sciences')
+SELECT * from DUAL
+
+select * from patient
+
+
+INSERT ALL
+into DOC_ON_CALL values ('DC01','Dr. AT','MD',800,8090607051)
+into DOC_ON_CALL values ('DC02','Dr. BS','MD',600,8090607052)
+into DOC_ON_CALL values ('DC03','Dr. CR','MBBS',1000,8090607053)
+into DOC_ON_CALL values ('DC04','Dr. DQ','MBBS',1200,8090607054)
+into DOC_ON_CALL values ('DC05','Dr. EP','MD',500,8090607055)
+into DOC_ON_CALL values ('DC06','Dr. FO','MD',600,8090607056)
+into DOC_ON_CALL values ('DC07','Dr. GN','MBBS',800,8090607057)
+into DOC_ON_CALL values ('DC08','Dr. HM','MBBS',900,8090607058)
+into DOC_ON_CALL values ('DC09','Dr. IL','MBBS',1200,8090607059)
+into DOC_ON_CALL values ('DC10','Dr. JK','MBBS',1500,8090607060)
+into DOC_ON_CALL values ('DC11','Dr. KJ','MBBS',1400,8090607081)
+into DOC_ON_CALL values ('DC12','Dr. LI','MD',1200,8090607082)
+into DOC_ON_CALL values ('DC13','Dr. MH','MBBS',800,8090607083)
+into DOC_ON_CALL values ('DC14','Dr. NG','MD',600,8090607084)
+into DOC_ON_CALL values ('DC15','Dr. OF','MD',600,8090607085)
+into DOC_ON_CALL values ('DC16','Dr. PE','MD',600,8090607086)
+into DOC_ON_CALL values ('DC17','Dr. QD','MBBS',900,8090607087)
+into DOC_ON_CALL values ('DC18','Dr. RC','MD',700,8090607088)
+into DOC_ON_CALL values ('DC19','Dr. SB','MD',500,8090607089)
+into DOC_ON_CALL values ('DC20','Dr. TA','MD',600,8090607090)
+SELECT * from DUAL
+
+Create table department (
+D_NAME varchar2(50), 
+D_LOCATION varchar2(20), 
+FACILITIES varchar2(50))
+
+INSERT ALL
+into Department values ('Anaesthesia','Floor 1','Critical Care & Pain Management')
+into Department values ('Cardiac','Floor 2','Surgery')
+into Department values ('Diagnostics','Floor 3','Diagnosis')
+into Department values ('ENT','Floor 4','Medicine')
+into Department values ('General Surgery','Floor 5','Surgery')
+into Department values ('Neuro Sciences','Floor 6','Diagnosis with Surgery')
+into Department values ('Physiotherapy','Floor 7','Critical care & Pain Management')
+into Department values ('Psychiatry','Floor 8','Diagnosis')
+into Department values ('Orthopaedic','Floor 9','Critical Care & Pain Management')
+into Department values ('Pulmonary','Floor 10','Reserved')
+into Department values ('General','Floor 11','Reserved')
+SELECT * from DUAL
+select * from department
+
+select doc_id, Department from Table1
+UNION ALL
+select English, French from Table2
+
+select * from doctor d natural join department dep where d.department=dep.d_name 
+
+select count(p_name) from patient where department='Cardiac'
+
+select avg(p_age) from patient
+select count(p_age) from patient
+select sum(p_age) from patient
+
+select * from patient where p_age>45
+
+select count(doc_id) from doctor d natural join department dep where d.department=dep.d_name and (department='Cardiac' or department='ENT' or department='Orthopaedic')
